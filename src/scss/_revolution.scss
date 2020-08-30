@@ -1,0 +1,112 @@
+*, *::after, *::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  @include container;
+}
+.revolutionary__hidden-title {
+  display: none;
+}
+.revolutionary {
+  text-align: center;
+  & * + * {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: 320px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &__title {
+      font-size: 26px;
+      margin-top: 40px;
+      color: #635C73;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    &__line-break {
+      display: block;
+    }
+    &__text {
+      font-family: $main-font;
+      font-weight: normal;
+      font-size: 14px;
+      color: #323232;
+      max-width: 600px;
+    }
+    &__button-link-wrapper {
+      display: inline-flex;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    &__github-button {
+      margin: 0 auto;
+      max-width: 300px;
+    }
+    &__watch-button {
+      text-decoration: none;
+      color: #404040;
+      font-family: 'Kanit', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 0 6px ;
+      border: 0.4px solid #bcbcbc;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      background: rgb(187,187,187);
+      background: linear-gradient(124deg,
+              rgba(187,187,187,0.9476832969515931) 4%,
+              rgba(231,231,231,1) 30%,
+              rgba(232,232,232,1) 38%,
+              rgba(255,255,255,1) 67%,
+              rgba(255,255,255,1) 90%);
+      }
+    }
+    @media screen and (min-width: 481px) {
+      .revolutionary {
+        &__github-button {
+          margin: 0 auto 60px;
+          max-width: 370px;
+        }
+        &__text {
+          font-size: 21px;
+        }
+        &__title {
+          display: none;
+        }
+        &__hidden-title {
+          font-size: 42px;
+          display: inline-block;
+        }
+        &__github-button {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @media screen and (min-width: 992px) {
+      .revolutionary {
+        &__title {
+          display: none;
+        }
+        &__text {
+          min-width: 765px;
+          font-size: 21px;
+        }
+        &__github-button {
+          margin-bottom: 60px;
+        }
+        &__hidden-title {
+          display: block;
+          font-size: 54px;
+        }
+      }
+   }
+}
+.button__number,
+.button__star-number,
+.button__fork-number{
+  @include main-github-link-property;
+  font-family: 'Kanit', sans-serif;
+  font-weight: normal;
+}
